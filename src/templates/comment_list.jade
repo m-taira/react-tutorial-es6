@@ -1,0 +1,6 @@
+h1 I am Comment List
+div contet
+  -_.each(comments, function(comment) {
+    Comment(author=comment.author)
+      = comment.text
+  -});
