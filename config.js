@@ -13,6 +13,8 @@ module.exports = {
       extensions: ['', '.js', '.es6', '.jade']
     },
 
+    devtool: 'inline-source-map',
+
     module: {
       loaders: [
         { test: /\.es6$/, loader: 'babel-loader' },
