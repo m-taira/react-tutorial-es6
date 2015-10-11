@@ -1,2 +1,6 @@
 h1 comment form
-div comment_form
+div.comment_form
+  form(onSubmit=handleSubmit())
+    input(type="text" placeholder="author" ref='author')
+    input(type="text" placeholder="comment" ref='comment_text')
+    input(type="submit" value="コメントする")

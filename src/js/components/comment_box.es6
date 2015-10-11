@@ -17,7 +17,7 @@ export default class CommentBox extends React.Component {
   }
   componentDidMount() {
     this.get_data_from_server();
-    setInterval(this.get_data_from_server.bind(this), this.props.interval);
+    //setInterval(this.get_data_from_server.bind(this), this.props.interval);
   }
 
   get_data_from_server() {
@@ -28,10 +28,17 @@ export default class CommentBox extends React.Component {
       });
   }
 
+  handleCommentSubmit(comment){
+    var comments = this.state.comments;
+    this.setState({comments: comments.concat(comment)});
+    console.log('send to server on comment box');
+  }
+
   render() {
     return template(_.assign({
       CommentList: React.createFactory(CommentList),
-      CommentForm: React.createFactory(CommentForm)
+      CommentForm: React.createFactory(CommentForm),
+      handleCommentSubmit: this.handleCommentSubmit.bind(this)
     }, this, this.props, this.state));
   }
 }
