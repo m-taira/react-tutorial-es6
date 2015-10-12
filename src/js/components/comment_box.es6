@@ -17,7 +17,7 @@ export default class CommentBox extends React.Component {
   }
   componentDidMount() {
     this.get_data_from_server();
-    //setInterval(this.get_data_from_server.bind(this), this.props.interval);
+    setInterval(this.get_data_from_server.bind(this), this.props.interval);
   }
 
   get_data_from_server() {
@@ -30,8 +30,15 @@ export default class CommentBox extends React.Component {
 
   handleCommentSubmit(comment){
     var comments = this.state.comments;
-    this.setState({comments: comments.concat(comment)});
+    this.setState({comments: _.takeRight(comments.concat(comment), 10)});
     console.log('send to server on comment box');
+
+    request
+      .post(this.props.url)
+      .send({comment: comment})
+      .end(function(err, res){
+        console.log(res.body);
+      });
   }
 
   render() {

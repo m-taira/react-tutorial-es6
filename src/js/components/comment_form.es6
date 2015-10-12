@@ -20,7 +20,7 @@ export default class CommentFrom extends React.Component {
 
     console.log('send server');
 
-    this.props.handleCommentSubmit({author: author, text: comment_text});
+    this.props.handleCommentSubmit({author: author, text: comment_text, persisted: false});
 
     ReactDOM.findDOMNode(this.refs.author).value = '';
     ReactDOM.findDOMNode(this.refs.comment_text).value = '';

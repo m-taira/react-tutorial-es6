@@ -1,0 +1,24 @@
+.comment-box {
+    border: 3px solid red;
+    margin: 3px;
+}
+
+.comment-list {
+    border: 3px solid blue;
+    margin: 3px;
+}
+
+.comment {
+    border: 3px solid green;
+    margin: 3px;
+    padding: 1px;
+}
+
+.comment-form {
+    border: 3px solid black;
+    margin: 3px;
+}
+
+p {
+    margin: 1px;
+}

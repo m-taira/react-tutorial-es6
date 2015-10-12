@@ -1,6 +1,6 @@
-h1 Comment List
-div
+div.comment-list
+  h3 comment list
   -_.each(comments, function(comment) {
-    Comment(author=comment.author)
+    Comment(author=comment.author persisted=comment.persisted)
       = comment.text
   -});
